@@ -33,6 +33,18 @@ public class Book {
 		this.id = idCounter;
 	}
 	
+	public Book(String name, String authors, String press, int year, int pages, double price, String cover) {
+		this.setName(name);
+		this.setAuthors(authors);
+		this.setPress(press);
+		this.setYear(year);
+		this.setPages(pages);
+		this.setPrice(price);
+		this.setCover(cover);
+		idCounter++;
+		this.id = idCounter;
+	}
+	
 	public Book(String name, String authors, String press) {
 		this.setName(name);
 		this.setAuthors(authors);
@@ -119,14 +131,14 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder("Book id: " + this.getId() +
-											"\nName: " + this.getName() + 
-											"\nAuthor(s): " + this.getAuthors() +
-											"\nPress: " + this.getPress() +
-											"\nYear: " + this.getYear() +
-											"\nPages: " + this.getPages() +
-											"\nPrice: " + this.getPrice() +
-											"\nCover: " + this.getCover());
+		StringBuilder sb = new StringBuilder("\tBook id: " + this.getId() +
+											"\n\tName: " + this.getName() + 
+											"\n\tAuthor(s): " + this.getAuthors() +
+											"\n\tPress: " + this.getPress() +
+											"\n\tYear: " + this.getYear() +
+											"\n\tPages: " + this.getPages() +
+											"\n\tPrice: $" + this.getPrice() +
+											"\n\tCover: " + this.getCover());
 		return sb.toString();
 	}
 	
