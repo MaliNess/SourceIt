@@ -1,7 +1,5 @@
 package hw5;
 
-import com.sun.xml.internal.ws.transport.http.DeploymentDescriptorParser;
-
 public class BooksDemo {
 
 	public static void main(String[] args) {
