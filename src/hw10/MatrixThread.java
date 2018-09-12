@@ -13,7 +13,7 @@ public class MatrixThread extends Thread{
 	
 	public void run() {
 		max = mt[row][0];
-		for(int i = 0; i < 100; i++) {
+		for(int i = 0; i < mt[row].length; i++) {
 			if(mt[row][i] > max) max = mt[row][i];
 		}
 	}

@@ -5,11 +5,11 @@ import java.util.Random;
 public class Matrix {
 
 	public static void main(String[] args) {
-		int[][] m = new int[4][100];
+		int[][] m = new int[4][1000];
 		Random r = new Random();
 		for (int i = 0; i < m.length; i++) {
 			for (int j = 0; j < m[i].length; j++) {
-				m[i][j] = r.nextInt(100);
+				m[i][j] = r.nextInt(1000);
 			}
 		}
 
@@ -20,6 +20,7 @@ public class Matrix {
 			System.out.println();
 		}
 
+		long start = System.currentTimeMillis();
 		MatrixThread mt1 = new MatrixThread(m, 0);
 		MatrixThread mt2 = new MatrixThread(m, 1);
 		MatrixThread mt3 = new MatrixThread(m, 2);
@@ -48,7 +49,11 @@ public class Matrix {
 			max = mt4.max;
 
 		System.out.println(System.lineSeparator() + "Threads max: " + max);
-		
+		long finish = System.currentTimeMillis();
+		long timeConsumedMillis = finish - start;
+		System.out.println("Time: " + timeConsumedMillis + System.lineSeparator());
+
+		start = System.currentTimeMillis();
 		max = m[0][0];
 		for(int i = 0; i<m.length; i++) {
 			for(int j = 0; j < m[i].length; j++) {
@@ -57,6 +62,9 @@ public class Matrix {
 		}
 		
 		System.out.println("Standart max: " + max);
+		finish = System.currentTimeMillis();
+		timeConsumedMillis = finish - start;
+		System.out.println("Time: " + timeConsumedMillis + System.lineSeparator());
 	}
 
 }
