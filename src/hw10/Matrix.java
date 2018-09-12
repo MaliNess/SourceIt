@@ -57,6 +57,11 @@ public class Matrix {
 		max = m[0][0];
 		for(int i = 0; i<m.length; i++) {
 			for(int j = 0; j < m[i].length; j++) {
+				try {
+					Thread.sleep(1);
+				} catch(InterruptedException e) {
+					System.out.println("Thread has been interrupted");
+				}
 				if(m[i][j] > max) max = m[i][j];
 			}
 		}

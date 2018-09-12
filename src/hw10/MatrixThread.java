@@ -14,6 +14,11 @@ public class MatrixThread extends Thread{
 	public void run() {
 		max = mt[row][0];
 		for(int i = 0; i < mt[row].length; i++) {
+			try {
+				Thread.sleep(1);
+			} catch(InterruptedException e) {
+				System.out.println("Thread has been interrupted");
+			}
 			if(mt[row][i] > max) max = mt[row][i];
 		}
 	}
